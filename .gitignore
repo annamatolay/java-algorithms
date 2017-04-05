@@ -1,0 +1,6 @@
+# IntelliJ things
+.idea/
+algorithms.iml
+# Built application files
+out/
+
