@@ -2,6 +2,17 @@ package sorting;
 
 import java.util.Arrays;
 
+/**
+ * Is a simple sorting algorithm that repeatedly steps through the list to be sorted,
+ * compares each pair of adjacent items and swaps them if they are in the wrong order.
+ * The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.
+ * The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble"
+ * to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems.
+ * It can be practical if the input is usually in sorted order but may occasionally
+ * have some out-of-order elements nearly in position.
+ *
+ * Average performance: O(n^2)
+ */
 public class BubbleSort {
 
     private static int[] sort (int[] array) {
@@ -27,12 +38,14 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
+        // create new array with 10 random number (between 0-50)
         int[] array = new int[10];
         for (int i = 0; i<array.length; i++) {
             array[i] = (int) (Math.random()*50);
         }
-        System.out.println(Arrays.toString(array));
-        System.out.println(Arrays.toString(BubbleSort.sort(array)));
+        // let's rock
+        System.out.println("Target array:\n"+Arrays.toString(array));
+        System.out.println("Result:\n"+Arrays.toString(BubbleSort.sort(array)));
 
     }
 }

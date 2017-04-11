@@ -3,8 +3,15 @@ package searching;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Compares the target value to the middle element of the array; if they are unequal,
+ * the half in which the target cannot lie is eliminated and the search continues
+ * on the remaining half until it is successful or the remaining half is empty.
+ * It works on sorted arrays.
+ *
+ * Average performance: O(log n)
+ */
 public class BinarySearch {
-    // define necessary fields
     private int[] array;
     private int target;
     private int max;
@@ -12,7 +19,6 @@ public class BinarySearch {
     private int guess;
 
     private BinarySearch (int[] array, int target) {
-        // initialize fields
         this.array = array;
         this.target = target;
         this.max = array.length-1;
@@ -20,12 +26,6 @@ public class BinarySearch {
         this.guess = 0;
     }
 
-    // count sign the loop steps
-    // while the min value doesn't reach the max, the searching will continue
-    // (otherwise return -1)
-    // if the guessed number is right, return that
-    // if not, increase or decrease the min or max value
-    // (depend on statements)
     private int doSearch() {
         int count = 0;
         while (min <= max) {
@@ -51,16 +51,13 @@ public class BinarySearch {
         for (int i = 0; i<array.length; i++) {
             array[i] = i;
         }
-        System.out.println("Target array:");
-        System.out.println(Arrays.toString(array));
-
+        System.out.println("Target array:\n"+Arrays.toString(array));
         // get a random target
         Random n = new Random();
         int target = n.nextInt(50) - 10;
         System.out.println("Target number: "+target);
-
         // let's rock!
         BinarySearch bin = new BinarySearch(array, target);
-        System.out.println("Result: " + bin.doSearch());
+        System.out.println("Result:\n" + bin.doSearch());
     }
 }
