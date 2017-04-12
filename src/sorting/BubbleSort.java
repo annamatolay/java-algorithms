@@ -1,5 +1,7 @@
 package sorting;
 
+import common.myArray;
+
 import java.util.Arrays;
 
 /**
@@ -38,11 +40,8 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        // create new array with 10 random number (between 0-50)
-        int[] array = new int[10];
-        for (int i = 0; i<array.length; i++) {
-            array[i] = (int) (Math.random()*50);
-        }
+        // create new array with 10 random number
+        int[] array = myArray.getRandom(10);
         // let's rock
         System.out.println("Target array:\n"+Arrays.toString(array));
         System.out.println("Result:\n"+Arrays.toString(BubbleSort.sort(array)));

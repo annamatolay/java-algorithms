@@ -1,5 +1,7 @@
 package searching;
 
+import common.myArray;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -46,13 +48,10 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
-        // create new int array and fill it
-        int[] array = new int[32];
-        for (int i = 0; i<array.length; i++) {
-            array[i] = i;
-        }
+        // create new int array with 32 (not random) element
+        int[] array = myArray.get(32);
         System.out.println("Target array:\n"+Arrays.toString(array));
-        // get a random target
+        // get a random target (between: -10 - 40)
         Random n = new Random();
         int target = n.nextInt(50) - 10;
         System.out.println("Target number: "+target);

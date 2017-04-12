@@ -1,5 +1,7 @@
 package sorting;
 
+import common.myArray;
+
 import java.util.Arrays;
 
 /**
@@ -65,10 +67,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         // Create an array with 10 random element
-        int[] array = new int[10];
-        for (int i = 0; i<array.length; i++) {
-            array[i] = (int) (Math.random()*50);
-        }
+        int[] array = myArray.getRandom(30);
         // Let's rock
         System.out.println("Target array:\n"+ Arrays.toString(array));
         MergeSort merge = new MergeSort();
